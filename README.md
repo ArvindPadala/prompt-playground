@@ -10,29 +10,42 @@ You can input a prompt, tweak temperature, top-k, top-p parameters, and instantl
 
 ## 🌟 Key Features
 Prompt Input – Write your own prompt
+
 Model Selection – Choose from OpenAI GPT-3.5, Mistral-7B, Gemma
+
 Decoding Controls – Adjust temperature, top-k, and top-p
+
 Output Comparison – See side-by-side results
 
 
 ## 🔧 Tech Stack
 Python
+
 Streamlit
+
 Hugging Face Transformers
+
 Local LLMs (Mistrel, Gemma, Ollama)
 
 ## 📈 Future Enhancements
+
 Save prompt history
+
 Token usage stats
+
 User feedback option ("Which output was better?")
+
 Prompt templates
 
 ## 🙌 Learning Outcomes
 By building this, you’ll master:
 
 Prompt design principles
+
 Model decoding behavior
+
 How different LLMs behave
+
 Streamlit app building
 
 
