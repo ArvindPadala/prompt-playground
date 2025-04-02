@@ -4,14 +4,14 @@
 Prompt Engineering Playground: Experiment, Compare & Learn
 
 ## 🎯 Project Description
-The Prompt Engineering Playground is an interactive web app that allows you to experiment with prompt design, decoding strategies, and model behavior of modern Large Language Models (LLMs) like GPT-3.5, Mistral, and Gemma.
+The Prompt Engineering Playground is an interactive web app that allows you to experiment with prompt design, decoding strategies, and model behavior of modern Large Language Models (LLMs) like llama, Mistral, and Gemma.
 
 You can input a prompt, tweak temperature, top-k, top-p parameters, and instantly compare how different models respond—helping you build an intuition about how prompts & parameters shape the output.
 
 ## 🌟 Key Features
 Prompt Input – Write your own prompt
 
-Model Selection – Choose from OpenAI GPT-3.5, Mistral-7B, Gemma
+Model Selection – Choose from Mistral-7B, Gemma, Llama
 
 Decoding Controls – Adjust temperature, top-k, and top-p
 
