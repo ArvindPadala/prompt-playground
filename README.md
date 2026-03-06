@@ -4,50 +4,84 @@
 Prompt Engineering Playground: Experiment, Compare & Learn
 
 ## 🎯 Project Description
-The Prompt Engineering Playground is an interactive web app that allows you to experiment with prompt design, decoding strategies, and model behavior of modern Large Language Models (LLMs) like llama, Mistral, and Gemma.
+The Prompt Engineering Playground is an interactive web app that lets you experiment with prompt design, decoding strategies, and model behaviour of modern Large Language Models (LLMs) — Mistral, Gemma, and Llama2 — running locally via [Ollama](https://ollama.ai/).
 
-You can input a prompt, tweak temperature, top-k, top-p parameters, and instantly compare how different models respond—helping you build an intuition about how prompts & parameters shape the output.
+Input a prompt, optionally set a system instruction, tweak temperature/top-k/top-p, and watch all selected models respond in real time. Run a single model with live token streaming, or select multiple models for instant side-by-side comparison.
 
-## 🌟 Key Features
-Prompt Input – Write your own prompt
+## 🌟 Features
 
-Model Selection – Choose from Mistral-7B, Gemma, Llama
-
-Decoding Controls – Adjust temperature, top-k, and top-p
-
-Output Comparison – See side-by-side results
-
+| Feature | Status |
+|---|---|
+| Prompt Input | ✅ |
+| System Prompt (instruction/persona) | ✅ |
+| Model Selection — Mistral, Gemma, Llama2 | ✅ |
+| Decoding Controls — temperature, top-k, top-p | ✅ |
+| Real-Time Token Streaming | ✅ |
+| Multi-Model Side-by-Side Comparison | ✅ |
+| Prompt History (last 10) | ✅ |
+| Token Usage Stats (prompt tokens, output tokens, tokens/sec) | ✅ |
+| Configurable Ollama Endpoint | ✅ |
+| Copy-to-clipboard for Outputs | ✅ |
 
 ## 🔧 Tech Stack
-Python
 
-Streamlit
+- Python 3.10+
+- [Streamlit](https://streamlit.io/) `>=1.32`
+- [Ollama](https://ollama.ai/) (local LLM runtime)
+- `requests` (HTTP client for Ollama API)
 
-Hugging Face Transformers
+## 🚦 Prerequisites
 
-Local LLMs (Mistrel, Gemma, Ollama)
+1. Install [Ollama](https://ollama.ai/) and pull your desired models:
+   ```bash
+   ollama pull mistral
+   ollama pull gemma
+   ollama pull llama2
+   ```
 
-## 📈 Future Enhancements
+2. Make sure Ollama is running:
+   ```bash
+   ollama serve
+   ```
 
-Save prompt history
+## ⚡ Quick Start
 
-Token usage stats
+```bash
+git clone https://github.com/your-username/prompt-playground.git
+cd prompt-playground
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-User feedback option ("Which output was better?")
+Open [http://localhost:8501](http://localhost:8501) in your browser.
 
-Prompt templates
+## 📁 Project Structure
+
+```
+prompt-playground/
+├── app.py                  # Main Streamlit application
+├── requirements.txt        # Python dependencies
+├── README.md
+└── models/
+    ├── __init__.py         # Exports all model functions
+    ├── gemma_model.py      # Gemma streaming generator
+    ├── llama_model.py      # Llama2 streaming generator
+    └── mistral_model.py    # Mistral streaming generator
+```
+
+## 📈 Planned Enhancements
+
+- Save/export prompt history as JSON or CSV
+- User feedback: "Which output was better?"
+- Prompt template library
+- Token probability / logprob visualisation
 
 ## 🙌 Learning Outcomes
-By building this, you’ll master:
 
-Prompt design principles
+By building this, you'll master:
 
-Model decoding behavior
-
-How different LLMs behave
-
-Streamlit app building
-
-
-
-
+- Prompt design principles
+- LLM decoding parameters (temperature, top-k, top-p)
+- Streaming API responses with NDJSON
+- Concurrency in Python (`ThreadPoolExecutor`)
+- Streamlit session state and layout APIs
